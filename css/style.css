@@ -48,7 +48,10 @@ ul {
 	color: #ffff;
 	font-size: 15px;
 }
-
+a.header-link {
+	color: #ffff;
+	font-size: 15px;
+}
 a.header-link:hover {
 	color: #061e37;
 }
@@ -126,11 +129,11 @@ a.header-link:hover {
 	letter-spacing:-0.4px;
 	margin-bottom: 23px;
 }
-.page-useful-title span {
+.box-title span {
 	font-size: 25px;
 	color: #b0bec5;
 }
-.page-useful-title {
+.box-title {
 	text-align: center;
     width: 39%;
     margin: 0 auto;
@@ -207,6 +210,9 @@ a.header-link:hover {
 .counts-item-users {
 	background-color: #ea80fc;
 }
+.services-title {
+	
+}
 
 /* PAGES */
 .page-header {
@@ -219,5 +225,8 @@ a.header-link:hover {
 }
 .page-useful {
     margin:105px 0 95px 0;
+}
+.page-services {
+	margin-top: 105px;
 }
 

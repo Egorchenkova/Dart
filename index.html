@@ -8,7 +8,18 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
 	<link href="https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800,900" rel="stylesheet">
 	<link rel="stylesheet" href="css/style.css">
-	<script src="<?=SITE_TEMPLATE_PATH?>/js/jquery-3.2.1.min.js"></script>
+	  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  	<link rel="stylesheet" href="/resources/demos/style.css">
+  	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  	<script>
+  	$( function() {
+    $( "#accordion" ).accordion();
+  	} );
+  	</script>
+
+	
+
 </head>
 <body>
 	<header class="page-header">
@@ -37,7 +48,7 @@
 	</header>
 	<div class="page-useful">
 		<div class="wrap">
-		<div class="page-useful-title">
+		<div class="box-title">
 		<h2 class="title-h2">Easy & Useful</h2>
 		<span>Project Management Tool</span>
 		<p class="text-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud </p>
@@ -101,14 +112,74 @@
 					<div class="users">0</div> 
 					<span>Pro Users</span>
 				</div>
-			</div>
-			
-		</div>
-		
+			</div>			
+		</div>		
 	</div>
- 
+	<div class="page-services">
+		<div class="wrap">
+			<div class="box-title">
+			<h2 class="title-h2">Services</h2>
+			<p class="text-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna </p>
+		</div>
+
+		<div id="accordion">
+  <h3>Section 1</h3>
+  <div>
+    <p>
+    Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
+    ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit
+    amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut
+    odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.
+    </p>
+  </div>
+  <h3>Section 2</h3>
+  <div>
+    <p>
+    Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
+    purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor
+    velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In
+    suscipit faucibus urna.
+    </p>
+  </div>
+  <h3>Section 3</h3>
+  <div>
+    <p>
+    Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis.
+    Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero
+    ac tellus pellentesque semper. Sed ac felis. Sed commodo, magna quis
+    lacinia ornare, quam ante aliquam nisi, eu iaculis leo purus venenatis dui.
+    </p>
+    <ul>
+      <li>List item one</li>
+      <li>List item two</li>
+      <li>List item three</li>
+    </ul>
+  </div>
+  <h3>Section 4</h3>
+  <div>
+    <p>
+    Cras dictum. Pellentesque habitant morbi tristique senectus et netus
+    et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
+    faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia
+    mauris vel est.
+    </p>
+    <p>
+    Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus.
+    Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
+    inceptos himenaeos.
+    </p>
+  </div>
+</div>
+</div>
+
+	
+  	
+
+
+
 	
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
 	<script> 
 	$(function() {
 		var target_block = $(".business"); // Ищем блок 
@@ -128,17 +199,17 @@
 		});		
 	});
 	$(function() {
-		var target_block = $(".drownloads"); // Ищем блок 
+		var target_block = $(".drownloads"); 
 		var blockStatus = true;
 		$(window).scroll(function() {
 			var scrollEvent = ($(window).scrollTop() > (target_block.position().top - $(window).height()));
 			if(scrollEvent && blockStatus) {
-				blockStatus = false; // Запрещаем повторное выполнение функции до следующей перезагрузки страницы.
+				blockStatus = false; 
 				$({numberValue: 0}).animate({numberValue: 60000}, {
-					duration: 1000, // Скорость анимации, где 500 - 0.5 одной секунды, то есть 500 миллисекунд 
+					duration: 1000,
 					easing: "linear",
 					step: function(val) {
-						$(".drownloads").html(Math.ceil(val)); // Блок, где необходимо сделать анимацию
+						$(".drownloads").html(Math.ceil(val)); 
 					}				
 				});		
 			}		
@@ -150,34 +221,35 @@
 		$(window).scroll(function() {
 			var scrollEvent = ($(window).scrollTop() > (target_block.position().top - $(window).height()));
 			if(scrollEvent && blockStatus) {
-				blockStatus = false; // Запрещаем повторное выполнение функции до следующей перезагрузки страницы.
+				blockStatus = false; 
 				$({numberValue: 0}).animate({numberValue: 30000}, {
-					duration: 1000, // Скорость анимации, где 500 - 0.5 одной секунды, то есть 500 миллисекунд 
+					duration: 1000,
 					easing: "linear",
 					step: function(val) {
-						$(".installs").html(Math.ceil(val)); // Блок, где необходимо сделать анимацию
+						$(".installs").html(Math.ceil(val)); 
 					}				
 				});		
 			}		
 		});		
 	});
 	$(function() {
-		var target_block = $(".users"); // Ищем блок 
+		var target_block = $(".users"); 
 		var blockStatus = true;
 		$(window).scroll(function() {
 			var scrollEvent = ($(window).scrollTop() > (target_block.position().top - $(window).height()));
 			if(scrollEvent && blockStatus) {
-				blockStatus = false; // Запрещаем повторное выполнение функции до следующей перезагрузки страницы.
+				blockStatus = false; 
 				$({numberValue: 0}).animate({numberValue: 40000}, {
-					duration: 1000, // Скорость анимации, где 500 - 0.5 одной секунды, то есть 500 миллисекунд 
+					duration: 1000,
 					easing: "linear",
 					step: function(val) {
-						$(".users").html(Math.ceil(val)); // Блок, где необходимо сделать анимацию
+						$(".users").html(Math.ceil(val)); 
 					}				
 				});		
 			}		
 		});		
 	});
+
 	
 </script>
 
