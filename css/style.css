@@ -210,8 +210,27 @@ a.header-link:hover {
 .counts-item-users {
 	background-color: #ea80fc;
 }
-.services-title {
-	
+.accordeon {
+	max-width: 803px;
+	margin: 0 auto;
+}
+.accordeon-p, .accordeon-img{
+	display: inline-block;
+}
+.accordeon-p {
+	width: 56%;
+	margin-left: 27px;
+}
+.accordeon-img {
+	float: left;
+}
+dt {
+	box-shadow: 1px 1px 10px 2px #dadada;
+	padding: 18px;
+}
+dd {
+	box-shadow: 1px 1px 10px 2px #dadada;
+	margin-left: 0;
 }
 
 /* PAGES */
