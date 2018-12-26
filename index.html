@@ -8,6 +8,7 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
 	<link href="https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800,900" rel="stylesheet">
 	<link rel="stylesheet" href="css/style.css">
+	<script src="<?=SITE_TEMPLATE_PATH?>/js/jquery-3.2.1.min.js"></script>
 </head>
 <body>
 	<header class="page-header">
@@ -42,25 +43,145 @@
 		<p class="text-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud </p>
 		</div>
 		<div class="page-useful-flex">
-			<div>
-				<img src="useful-icon-1.png" alt="icon">
+			<div class="useful-flex-item">
+				<img src="img/useful-icon-1.png" alt="icon">
 				<h3>Title Goes Here</h3>
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 			</div>
-			<div>
-				<img src="useful-icon-2.png" alt="icon">
+			<div class="useful-flex-item">
+				<img src="img/useful-icon-2.png" alt="icon">
 				<h3>Title Goes Here</h3>
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 			</div>
-			<div>
-				<img src="useful-icon-3.png" alt="icon">
+			<div class="useful-flex-item">
+				<img src="img/useful-icon-3.png" alt="icon">
 				<h3>Title Goes Here</h3>
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 			</div>
 		</div>
-		<button>Get started</button>
+		<button class="btn-primary btn-start">Get started</button>
 	</div>
 	</div>
 	
+	<div class="page-counts flex-counts">
+		<div class="counts-item">
+			<div>
+				<a href=""><img src="img/icon-1.png"></a>
+				<div>
+					<div class="business">0</div>
+					<span>Business</span>
+				</div>
+			</div>
+			
+		</div>
+		<div class="counts-item counts-item-drownloads">
+			<div>
+				<a href=""><img src="img/icon-2.png"></a>
+				<div>
+					<div class="drownloads">0</div>
+ 
+					<span>Drownloads</span>
+				</div>
+			</div>
+			
+		</div>
+		<div class="counts-item counts-item-installs">
+			<div>
+				<a href=""><img src="img/icon-3.png"></a>
+				<div>
+					<div class="installs">0</div>  
+					<span>Free Installs</span>
+				</div>
+			</div>
+		</div>
+		<div class="counts-item counts-item-users">
+			<div>
+				<a href=""><img src="img/icon-4.png"></a>
+				<div>
+					<div class="users">0</div> 
+					<span>Pro Users</span>
+				</div>
+			</div>
+			
+		</div>
+		
+	</div>
+ 
+	
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<script> 
+	$(function() {
+		var target_block = $(".business"); // Ищем блок 
+		var blockStatus = true;
+		$(window).scroll(function() {
+			var scrollEvent = ($(window).scrollTop() > (target_block.position().top - $(window).height()));
+			if(scrollEvent && blockStatus) {
+				blockStatus = false; // Запрещаем повторное выполнение функции до следующей перезагрузки страницы.
+				$({numberValue: 0}).animate({numberValue: 12000}, {
+					duration: 1000, // Скорость анимации, где 500 - 0.5 одной секунды, то есть 500 миллисекунд 
+					easing: "linear",
+					step: function(val) {
+						$(".business").html(Math.ceil(val)); // Блок, где необходимо сделать анимацию
+					}				
+				});		
+			}		
+		});		
+	});
+	$(function() {
+		var target_block = $(".drownloads"); // Ищем блок 
+		var blockStatus = true;
+		$(window).scroll(function() {
+			var scrollEvent = ($(window).scrollTop() > (target_block.position().top - $(window).height()));
+			if(scrollEvent && blockStatus) {
+				blockStatus = false; // Запрещаем повторное выполнение функции до следующей перезагрузки страницы.
+				$({numberValue: 0}).animate({numberValue: 60000}, {
+					duration: 1000, // Скорость анимации, где 500 - 0.5 одной секунды, то есть 500 миллисекунд 
+					easing: "linear",
+					step: function(val) {
+						$(".drownloads").html(Math.ceil(val)); // Блок, где необходимо сделать анимацию
+					}				
+				});		
+			}		
+		});		
+	});
+	$(function() {
+		var target_block = $(".installs"); // Ищем блок 
+		var blockStatus = true;
+		$(window).scroll(function() {
+			var scrollEvent = ($(window).scrollTop() > (target_block.position().top - $(window).height()));
+			if(scrollEvent && blockStatus) {
+				blockStatus = false; // Запрещаем повторное выполнение функции до следующей перезагрузки страницы.
+				$({numberValue: 0}).animate({numberValue: 30000}, {
+					duration: 1000, // Скорость анимации, где 500 - 0.5 одной секунды, то есть 500 миллисекунд 
+					easing: "linear",
+					step: function(val) {
+						$(".installs").html(Math.ceil(val)); // Блок, где необходимо сделать анимацию
+					}				
+				});		
+			}		
+		});		
+	});
+	$(function() {
+		var target_block = $(".users"); // Ищем блок 
+		var blockStatus = true;
+		$(window).scroll(function() {
+			var scrollEvent = ($(window).scrollTop() > (target_block.position().top - $(window).height()));
+			if(scrollEvent && blockStatus) {
+				blockStatus = false; // Запрещаем повторное выполнение функции до следующей перезагрузки страницы.
+				$({numberValue: 0}).animate({numberValue: 40000}, {
+					duration: 1000, // Скорость анимации, где 500 - 0.5 одной секунды, то есть 500 миллисекунд 
+					easing: "linear",
+					step: function(val) {
+						$(".users").html(Math.ceil(val)); // Блок, где необходимо сделать анимацию
+					}				
+				});		
+			}		
+		});		
+	});
+	
+</script>
+
+	
+
 </body>
 </html>
