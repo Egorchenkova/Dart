@@ -748,12 +748,8 @@ input[type="checkbox"]:checked+span:before{content:"";display:block;width:9px;he
     }
 }
 @media (max-width:450px) {
-	
-    .ma5slider {
-    	display: none;
-    }
-    .no-slider {
-    	display: block;
+	.slide-area {
+    	min-height: 425px;
     }
 }
 @media (max-width:400px) {
@@ -770,5 +766,12 @@ input[type="checkbox"]:checked+span:before{content:"";display:block;width:9px;he
 	.box-title {
     width: 100%;
 	}
-	
+	.slide-area {
+    	min-height: 492px;
+    }
+}
+@media (max-width:320px) {
+	.slide-area {
+    	min-height: 499px;
+    }
 }
